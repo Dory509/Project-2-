@@ -1,0 +1,24 @@
+[
+  {
+    "company_name": "Music Near Me",
+    "hoursPerWeek": 30,
+    "hourlyRate": 500,
+    "currentWeek":"01/06/2025"
+   
+
+  },
+  {
+    "company_name": "LEXIOS",
+    "hoursPerWeek":35,
+    "hourlyRate": 100,
+     "currentWeek":"01/06/2025"
+
+  },
+  {
+    "company_name": "p",
+    "hourlyRate": 1900,
+    "hoursPerWeek":52,
+    "currentWeek":"01/06/2025"
+
+  }
+]

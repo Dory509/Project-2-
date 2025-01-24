@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Project extends Model {}
+class Payroll extends Model {}
 
-Project.init(
+Payroll.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -11,11 +11,11 @@ Project.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
+    company_name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    description: {
+    hoursPerWeek: {
       type: DataTypes.STRING,
     },
     date_created: {
@@ -23,9 +23,13 @@ Project.init(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    needed_funding: {
+    hourlyRate: {
       type: DataTypes.FLOAT,
       allowNull: false,
+    },
+    currentWeek:{
+      type: DataTypes.DATE,
+      allowNull:false
     },
     user_id: {
       type: DataTypes.INTEGER,
@@ -40,8 +44,8 @@ Project.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'project',
+    modelName: 'payroll',
   }
 );
 
-module.exports = Project;
+module.exports = Payroll;

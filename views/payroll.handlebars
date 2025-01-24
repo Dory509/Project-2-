@@ -1,0 +1,51 @@
+<div class="row">
+  <div class="col-auto">
+    <h2>Welcome, {{name}}!</h2>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col-md-6">
+    <h3>Create a New Payroll:</h3>
+
+    <form class="form new-payroll-form">
+      <div class="form-group">
+        <label for="company-name">company name:</label>
+        <input class="form-input" type="text" id="company-name" name="company-name" />
+      </div>
+      <div class="form-group">
+        <label for="hoursPerWeek">Hours for week</label>
+        <input id="hoursPerWeek" type="number" />
+      <div class="form-group">
+        <label>Hourly Rate</label>
+        <input class="form-input" type="number" id="hourlyRate" name="hourlyRate" />
+      </div>
+      <div class="form-group">
+        <label for="currentWeek"> current Week:</label>
+        <input class="form-input" type="date" id="currentWeek" name="currentWeek"/>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Create Entrybutton>
+      </div>
+    </form>
+  </div>
+
+  {{#if payrolls.length}}
+  <div class="col-md-6 payroll-list">
+    <h3>Current Payrolls:</h3>
+
+    {{#each payrolls as |payroll|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4><a href="/payroll/{{payroll.id}}">{{payroll.name}}</a></h4>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" data-id="{{payroll.id}}">DELETE</button>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+</div>
+
+<script src="./js/profile.js"></script>
